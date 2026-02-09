@@ -582,4 +582,64 @@ footer {
     width: 100%;
   }
 }
+
+/* ========== RTL SUPPORT ========== */
+html[dir="rtl"] .learn-more-link::after {
+  content: ' ←';
+}
+
+html[dir="rtl"] .learn-more-link:hover {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
+html[dir="rtl"] .learn-more-link:hover::after {
+  transform: translateX(-5px);
+}
+
+html[dir="rtl"] footer {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-bottom {
+  justify-content: flex-end;
+}
+
+/* ========== ACCESSIBILITY & FOCUS STATES ========== */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.form-control:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  }
 }
