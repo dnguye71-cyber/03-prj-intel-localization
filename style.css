@@ -5,6 +5,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #0071c5;
+  --primary-dark: #003c71;
+  --primary-light: #e3f2fd;
+  --text-dark: #0b2540;
+  --text-gray: #555;
+  --text-light: #334155;
+  --border-light: #e0e0e0;
+  --shadow-sm: 0 2px 8px rgba(3, 23, 45, 0.06);
+  --shadow-md: 0 6px 18px rgba(3, 23, 45, 0.08);
+  --shadow-lg: 0 12px 24px rgba(0, 113, 197, 0.05);
+  --shadow-hover: 0 12px 32px rgba(3, 23, 45, 0.15);
+}
+
 body {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: #f5f7fa;
@@ -12,6 +26,8 @@ body {
   line-height: 1.5;
 }
 
+
+/* ========== HEADER / HERO SECTION ========== */
 header {
   background: linear-gradient(135deg, #0071c5, #003c71);
   color: white;
