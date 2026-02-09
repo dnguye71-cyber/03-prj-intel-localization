@@ -262,5 +262,48 @@ section::-webkit-scrollbar-thumb {
   border-color: var(--primary-color);
 }
 
+/* Icon styling */
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  display: inline-flex;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-light) 0%, #bbdefb 100%);
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 300ms ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.15) rotate(10deg);
+  color: #0051a0;
+  background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%);
+}
+
+.feature-card h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 1rem 0;
+  font-weight: 700;
+  transition: color 300ms ease;
+}
+
+.feature-card:hover h2 {
+  color: var(--primary-color);
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
 
 }
