@@ -1,0 +1,200 @@
+/* Add Reset for Good Practice */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #f5f7fa;
+  color: #222;
+  line-height: 1.5;
+}
+
+header {
+  background: linear-gradient(135deg, #0071c5, #003c71);
+  color: white;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+/* Hero inner container: center content and constrain width */
+header > div {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo sizing */
+header img {
+  width: 140px;
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Headline */
+header h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  margin: 0.25rem 0;
+  line-height: 1.05;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Subheading/description */
+header p {
+  max-width: 70ch;
+  margin: 0.25rem auto 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* Slight visual lift */
+header {
+  box-shadow: inset 0 -30px 60px rgba(0,0,0,0.08);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header {
+    padding: 3.5rem 1rem;
+  }
+  header img {
+    width: 100px;
+  }
+  header h1 {
+    font-size: 1.6rem;
+  }
+  header p {
+    font-size: 0.98rem;
+  }
+}
+
+/* Timeline Horizontol Scroll. 
+Cards will line up in a row and scroll horizontally if needed */
+section {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Individual timeline cards */
+section > div {
+  min-width: 260px;
+  max-width: 340px;
+  background: #ffffff;
+  color: #0b2540;
+  padding: 1.25rem;
+  border-radius: 12px;
+  /* Layered shadows for depth */
+  box-shadow: 
+    0 2px 8px rgba(3, 23, 45, 0.06),
+    0 6px 18px rgba(3, 23, 45, 0.08),
+    0 12px 24px rgba(0, 113, 197, 0.05);
+  scroll-snap-align: start;
+  flex: 0 0 auto; /* prevent shrinking */
+  /* Smooth transitions for all interactive changes */
+  transition: 
+    transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+  border: 2px solid transparent;
+}
+
+section > div:hover {
+  /* Combine lift, scale, and subtle rotation */
+  transform: translateY(-8px) scale(1.03) perspective(1000px) rotateX(2deg);
+  /* Enhanced shadow on hover */
+  box-shadow: 
+    0 4px 12px rgba(3, 23, 45, 0.12),
+    0 12px 32px rgba(3, 23, 45, 0.15),
+    0 20px 40px rgba(0, 113, 197, 0.12);
+  /* Subtle border accent */
+  border-color: #0071c5;
+}
+
+/* Card inner typography */
+section h2 {
+  font-size: 1.15rem;
+  color: #0071c5;
+  margin-bottom: 0.25rem;
+  transition: color 250ms ease;
+}
+
+section h3 {
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+  color: #03376b;
+  font-weight: 600;
+  transition: color 250ms ease;
+}
+
+section p {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+  transition: color 250ms ease, opacity 250ms ease;
+  /* Subtle opacity change on card hover */
+}
+
+/* Enhance text visibility on hover */
+section > div:hover h2 {
+  color: #0051a0;
+}
+
+section > div:hover h3 {
+  color: #001f3f;
+}
+
+section > div:hover p {
+  color: #0b2540;
+}
+
+/* Slim, friendly scrollbar for WebKit browsers */
+section::-webkit-scrollbar {
+  height: 10px;
+}
+section::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,#cfe7ff,#9ec7ff);
+  border-radius: 999px;
+}
+
+/* Reduced hover effects on touch devices for better UX */
+@media (hover: none) {
+  section > div:hover {
+    transform: none;
+    border-color: transparent;
+  }
+}
+
+/* Media Inquiries: Make it Mobile Friendly */
+@media (max-width: 768px) {
+  section {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  section > div {
+    min-width: 220px;
+    max-width: 280px;
+    padding: 1rem;
+  }
+  
+  header {
+    font-size: 2rem;
+  }
+  
+  /* Reduce animation intensity on smaller screens */
+  section > div {
+    transition: 
+      transform 200ms ease,
+      box-shadow 200ms ease,
+      border-color 200ms ease;
+  }
+}
